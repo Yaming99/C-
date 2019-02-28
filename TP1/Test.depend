@@ -1,0 +1,34 @@
+# depslib dependency file v1.0
+1551355210 source:c:\users\alex\desktop\nouveau dossier (2)\test\main.cpp
+	<iostream>
+	"aaaa.h"
+	"assert.h"
+	"complex.h"
+	"X.h"
+
+1551345755 c:\users\alex\desktop\nouveau dossier (2)\test\aaaa.h
+
+1551345685 source:c:\users\alex\desktop\nouveau dossier (2)\test\test.cpp
+
+1551353262 c:\users\alex\desktop\nouveau dossier (2)\test\complex.h
+
+1551355875 source:c:\users\alex\desktop\nouveau dossier (2)\test\complex.cpp
+	<iostream>
+	"complex.h"
+
+1551355875 source:c:\users\alex\desktop\nouveau dossier (2)\test\x.cpp
+	<iostream>
+	<Cassert>
+	"X.h"
+
+1551355875 c:\users\alex\desktop\nouveau dossier (2)\test\x.h
+	<iostream>
+
+1551356914 source:c:\users\alex\desktop\nouveau dossier (2)\test\y.cpp
+	<iostream>
+	<Cassert>
+	"Y.h"
+
+1551356914 c:\users\alex\desktop\nouveau dossier (2)\test\y.h
+	<iostream>
+
