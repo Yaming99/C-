@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1551385647 source:c:\users\alex\desktop\nouveau dossier (3)\exo13\cdate.cpp
+	<iostream>
+	<ctime>
+	"CDate.h"
+
+1551385857 c:\users\alex\desktop\nouveau dossier (3)\exo13\cdate.h
+	<string>
+
+1551385857 source:c:\users\alex\desktop\nouveau dossier (3)\exo13\cpersonne.cpp
+	<iostream>
+	<cstring>
+	"CPersonne.h"
+
+1551385857 c:\users\alex\desktop\nouveau dossier (3)\exo13\cpersonne.h
+	<string>
+	"CDate.h"
+
+1551385807 source:c:\users\alex\desktop\nouveau dossier (3)\exo13\main.cpp
+	<iostream>
+	"CPersonne.h"
+
