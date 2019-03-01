@@ -4,16 +4,23 @@
 #include "complex.h"
 #include "X.h"
 #include "Y.h"
+#include "D.h"
+#include "T.h"
+#include "Personne.h"
 
 using namespace std;
+
+// Déclaration du prototype de la fonction pour l'exercice 6
+double somme(double a = 0, double b = 0, double c = 0, double d = 0);
+
 
 // j est un paramètre "normal", il reçoit une copie de la valeur passée en argument
 void fonc(long j)
 {
-    cout << "\nadresse de j : " << &j;
-    cout << "\ndans fonc(), valeur de j avant increment : " << j << endl;
+    cout << "\nAdresse de j : " << &j;
+    cout << "\nDans fonc(), valeur de j avant incr" << char(0x82) << "ment : " << j << endl;
     j++;
-    cout << "dans fonc(), valeur de j apres increment : " << j << endl;
+    cout << "Dans fonc(), valeur de j apr" << char(138) << "s incr" << char(0x82) << "ment : " << j << endl;
     return;
 }
 
@@ -21,55 +28,21 @@ void fonc(long j)
 // Regarder les adresses affichées
 void foncc(long &j)
 {
-    cout << "\nadresse de j : " << &j;
-    cout << "\ndans fonc(), valeur de j avant increment : " << j << endl;
+    cout << "\nAdresse de j : " << &j;
+    cout << "\nDans fonc(), valeur de j avant incr" << char(0x82) << "ment : " << j << endl;
     j++;
-    cout << "dans fonc(), valeur de j apres increment : " << j << endl;
+    cout << "Dans fonc(), valeur de j apr" << char(138) << "s incr" << char(0x82) << "ment : " << j << endl;
     return;
 }
 
-
-
 void fonc(ouch objet)
 {
-    cout << "debut fonc()" << endl;
+    cout << "D" << char(0x82) << "but fonc()" << endl;
     objet.print();
     objet.incr(2);
     objet.print();
-    cout << "fin fonc()" << endl;
+    cout << "Fin fonc()" << endl;
 }
-
-
-
-
-// déclarations des prototypes des fonctions pour l'exercice 3
-
-void func(double x);
-void func(int x);
-void func(int a, int b);
-void func(double a, double b);
-
-// déclarations des prototypes des fonctions pour l'exercice 4
-
-void echange(char & x, char & y);
-void echange(long & x, long & y);
-void echange(double & x, double & y);
-
-// déclarations des prototypes des fonctions pour l'exercice 5
-
-long  & valAt(long * tab, int indice, int taille);
-void initialise_tableau(long  * tab, int taille);
-void affiche_tableau(long  * tab, int taille);
-
-// déclarations des prototypes de la fonction pour l'exercice 6
-
-double somme(double a = 0, double b = 0, double c = 0, double d = 0);
-
-void exo3();
-void exo4();
-void exo5();
-void exo6();
-
 
 void func(int x) // j'aime pas les warnings
 {
@@ -140,12 +113,12 @@ void affiche_tableau(long * tab, int taille)
 
 double somme(double a, double b, double c, double d)
 {
-    return a + b + c + d;
+    return (a + b + c + d);
 }
 
 void exo3()
 {
-    cout << "\nExo 3:\n" << endl;
+    cout << "\nExo 3 :\n" << endl;
     func(5);
     func(5.23);
     func(5, 8);
@@ -250,8 +223,157 @@ void exo10()
     cout << f << endl;
 }
 
+void exo11()
+{
+    D a;
+    D b(a);
+    D * pa = 0; // pointeur nul
+    // 4 adresses aléatoires
+    D * pb;
+    D * pc;
+    D * pd;
+    D * pe;
+
+    pc = &a;
+    pd = pc;
+    pe = &b;
+    pb = pd;
+
+    cout << "\nADRESSES DES 7 VARIABLES :\n" << endl;
+    cout << "Addresse de a : " << &a << endl;
+    cout << "Addresse de b : " << &b << endl;
+    cout << "Addresse de pa : " << pa << endl;
+    cout << "Addresse de pb : " << pb << endl;
+    cout << "Addresse de pc : " << pc << endl;
+    cout << "Addresse de pd : " << pd << endl;
+    cout << "Addresse de pe : " << pe << endl;
+
+    cout << endl << "DESTRUCTIONS :\n" << endl;
+    delete pa; // pas d'appel car pointeur nul
+    delete pb;
+    delete pc;
+    delete pd;
+    delete pe;
+}
+
+void exo12()
+{
+    cout << "\nExo 12 :" << endl;
+    T a(2,3);
+    T b(a);
+    /* PLANTE car t1 et a ne sont pas de même dimension
+        T t1;
+        t1 = a; */
+    T t2(2,3);
+    t2 = a;
+
+    T * c = new T(2,2);
+    T * d;
+    d = c; // pointeurs sur la même instance de T
+
+    cout << "DESTRUCTEUR APPEL" << char(144) << " EXPLICITEMENT pour le pointeur c" << endl;
+    delete c;
+    // DESTRUCTEUR À NE PAS APPELER pour le pointeur d car l'instance sur lequel il pointe est déjà détruite par delete d;
+
+    // DESTRUCTEUR APPELE IMPLICITEMENT pour a et b
+    cout << "DESTRUCTEUR APPEL" << char(144) << " IMPLICITEMENT pour a et b " << endl;
+}
+
+void exo13()
+{
+    cout << "Exo 13 :\n\nMON NOM EST PERSONNE" << endl;
+
+    // 2 syntaxes équivalentes
+    Personne fantome1 = Personne();
+    Personne fantome2;
+    cout << "Fant" << char(147) << "me1 = " << fantome1 << endl;
+    cout << "Fant" << char(147) << "me2 = " << fantome2 << endl;
 
 
+    Personne personnes1 [3] = { {"Alfred", "Jarry", 60}, {"Charles", "Peguy", 20}, {"Rene", "De Chateaubriand", 56} };
+
+    cout << endl << "AFFICHAGE DU PREMIER TABLEAU DE PERSONNES" << endl;
+    for(int i = 0; i < 3; i++)
+    {
+        cout << personnes1[i] << endl;
+    }
+
+    Personne x("Georges", "Clemenceau", 80);
+    Personne y("Antoine", "Blondin");
+    Personne z("Paul", "Klee", 76);
+
+    // TEST DE L'ÂGE SANS DATE DE NAISSANCE CRÉÉE
+    cout << x.getLastname() << " a " << x.getAge() << " ans" << endl;
+
+    Personne  personnes2 [3] = {x, y, z};
+    cout << endl << "AFFICHAGE DU SECOND TABLEAU DE PERSONNES" << endl;
+    for(int i = 0; i < 3; i++)
+    {
+        cout << personnes2[i] << endl;
+    }
+
+    cout << endl << "TEST CONSTRUCTEUR DE COPIE" << endl;
+    // 3 syntaxes équivalentes
+    // Personne u = Personne(x);
+    // Personne u = x;
+    Personne u(x);
+    cout << "original x = " << x << endl;
+    cout << "u copie de x = " << u << endl;
+    cout << "Mise " << char(133) << " jour age de u" << endl;
+    u.setAge(40);
+    cout << "u modification " << char(131) << "ge = " << x << endl;
+    cout << "x original de u pas de modification = " << u << endl;
+
+
+    cout << endl << "TEST LA VARIABLE DE CLASSE today >>" << endl;
+    cout << "Nous sommes le " << Date::today << endl;
+    cout << "Nous sommes en l'an " << Date::today.getAnnee()<< endl;
+
+    cout << endl << "TEST DE L'" << char(182) << "GE AVEC LA DATE DE NAISSANCE CR" << char(144) << char(144) << "E" << endl;
+    cout << x.getLastname() << " a " << x.getAge() << " ans" << endl;
+    Personne duval("Jeanne", "Duval", 100, 3, 12, 1912);
+    cout << "Madame " << duval.getFirstname() << ' ' << duval.getLastname()
+         << " a "<< duval.getAge() << " ans" << endl;
+
+    cout << endl << "TEST SURCHARGE DE L'OP" << char(144) << "RATEUR >>" << endl;
+    Personne w;
+    cin >> w;
+    cout << "w = " << w << endl;
+    cout << "Monsieur " << w.getFirstname() << ' ' << w.getLastname()
+         << ", vous avez " << w.getAge() << " ans" << endl;
+
+    cout << endl << "TEST SUR LE MARIAGE >>" << endl;
+    cout << y << " et " << z << " se marient" << endl;
+    cout << x << " et " << w << " se marient" << endl;
+    marier(y, z);
+    marier(x, w);
+    cout << y << " a pour conjoint : " << *(y.getConjoint()) << endl;
+    cout << z << " a pour conjoint : " << *(z.getConjoint()) << endl;
+    cout << x << " a pour conjoint : " << *(x.getConjoint()) << endl;
+    cout << w << " a pour conjoint : " << *(w.getConjoint()) << endl;
+
+    cout << endl << "TEST SURCHARGE DE L'OP" << char(144) << "RATEUR = : LA R" << char(144) << "INCARNATION!" << endl;
+    Personne v;
+    v = x;
+    cout << "v assignation de x = " << x << endl;
+    if (x.getConjoint() != 0)
+        cout << x << " a toujours pour conjoint : " << *(x.getConjoint()) << endl;
+    if (v.getConjoint() != 0)
+        cout << v << " a pour conjoint : " << *(v.getConjoint()) << endl;
+    else
+        cout << v << " n'a pas de conjoint." << endl;
+
+    y = x;
+    cout << "y assignation de x = " << x << endl;
+    if (x.getConjoint() != 0)
+        cout << x << " a toujours pour conjoint : " << *(x.getConjoint()) << endl;
+    if (y.getConjoint() != 0)
+        cout << y << " a pour conjoint " << *(y.getConjoint()) << endl;
+    else
+        cout << y << " n'a pas de conjoint." << endl;
+
+    cout << "Nombre de personnes instanci" << char(0x82) << "es = " <<  Personne::nombre_personnes << endl;
+}
 
 int main()
 {
@@ -263,5 +385,8 @@ int main()
     exos_7_8();
     exo9();
     exo10();
+    exo11();
+    exo12();
+    exo13();
     return 0;
 }

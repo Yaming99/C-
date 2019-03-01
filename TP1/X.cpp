@@ -7,7 +7,7 @@ using namespace std;
 X::X()
     : util(0)
 {
-    cout << "Constructeur par défaut" << endl;
+    cout << "Constructeur par d" << char(0x82) << "faut" << endl;
     initialise_tableau(10);
     util = 10;
 }

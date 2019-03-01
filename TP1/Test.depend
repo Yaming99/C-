@@ -32,3 +32,61 @@
 1551356914 c:\users\alex\desktop\nouveau dossier (2)\test\y.h
 	<iostream>
 
+1551375724 source:c:\users\alex\desktop\tp1\complex.cpp
+	<iostream>
+	"complex.h"
+
+1551329314 c:\users\alex\desktop\tp1\complex.h
+
+1551375724 source:c:\users\alex\desktop\tp1\x.cpp
+	<iostream>
+	<Cassert>
+	"X.h"
+
+1551329314 c:\users\alex\desktop\tp1\x.h
+	<iostream>
+
+1551376618 source:c:\users\alex\desktop\tp1\y.cpp
+	<iostream>
+	<Cassert>
+	"Y.h"
+
+1551329314 c:\users\alex\desktop\tp1\y.h
+	<iostream>
+
+1551382233 source:c:\users\alex\desktop\tp1\main.cpp
+	<iostream>
+	"aaaa.h"
+	"assert.h"
+	"complex.h"
+	"X.h"
+	"Y.h"
+	"D.h"
+	"T.h"
+	"Personne.h"
+
+1551329314 c:\users\alex\desktop\tp1\aaaa.h
+
+1551376800 c:\users\alex\desktop\tp1\d.h
+	<iostream>
+
+1551378067 c:\users\alex\desktop\tp1\t.h
+	<iostream>
+	<Cassert>
+
+1551382233 source:c:\users\alex\desktop\tp1\date.cpp
+	<iostream>
+	<ctime>
+	"Date.h"
+
+1551379043 c:\users\alex\desktop\tp1\date.h
+	<string>
+
+1551382233 source:c:\users\alex\desktop\tp1\personne.cpp
+	<iostream>
+	"Personne.h"
+
+1551382233 c:\users\alex\desktop\tp1\personne.h
+	<string>
+	"Date.h"
+

@@ -6,7 +6,7 @@ using namespace std;
 
 Y::Y(long size)
 {
-    cout << "Constructeur avec une valeur par défaut" << endl;
+    cout << "Constructeur avec une valeur par d" << char(0x82) << "faut" << endl;
 
     if (size > 0)
     {
@@ -23,13 +23,9 @@ Y::Y(long size)
     }
 }
 
+// PROGRAMMATION DU CONTRUCTEUR DE COPIE : INDISPENSABLE avec un pointeur en attribut copie membre à membre pour tutil et
+// tmax données pointées réallouées : par de partage chaque instance possède son propre tableau
 
-/**
- * PROGRAMMATION DU CONTRUCTEUR DE COPIE : INDISPENSABLE avec un pointeur en attribut
- * copie membre à membre pour tutil et tmax
- * données pointées réallouées : par de partage
- * chaque instance possède son propre tableau
- */
 Y::Y(const Y & y)
     : tutil(y.tutil), tmax(y.tmax)
 {

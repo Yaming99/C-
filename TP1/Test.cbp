@@ -32,6 +32,12 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="D.h" />
+		<Unit filename="Date.cpp" />
+		<Unit filename="Date.h" />
+		<Unit filename="Personne.cpp" />
+		<Unit filename="Personne.h" />
+		<Unit filename="T.h" />
 		<Unit filename="X.cpp" />
 		<Unit filename="X.h" />
 		<Unit filename="Y.cpp" />
