@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1554337039 source:c:\users\alex\desktop\tp2\main.cpp
+	<iostream>
+	"point.h"
+	"rationnel.h"
+
+1554336685 c:\users\alex\desktop\tp2\point.h
+	<iostream>
+
+1554336685 source:c:\users\alex\desktop\tp2\point.cpp
+	"point.h"
+	<cmath>
+
+1554336685 c:\users\alex\desktop\tp2\rationnel.h
+	<iostream>
+
+1554336996 source:c:\users\alex\desktop\tp2\rationnel.cpp
+	"rationnel.h"
+

@@ -1,0 +1,34 @@
+# depslib dependency file v1.0
+1554377585 source:z:\prog\tp_3\main.cpp
+	<iostream>
+	"Carrot.h"
+	"Potatoe.h"
+	"Vegetable.h"
+
+1554378104 source:z:\prog\tp_3\src\carrot.cpp
+	<iostream>
+	"Carrot.h"
+
+1554377326 z:\prog\tp_3\include\carrot.h
+	<iostream>
+	"Vegetable.h"
+
+1554377283 z:\prog\tp_3\include\potatoe.h
+	<iostream>
+	"Vegetable.h"
+
+1554377897 source:z:\prog\tp_3\src\potatoe.cpp
+	"Potatoe.h"
+
+1554378415 z:\prog\tp_3\include\vegetable.h
+	<iostream>
+
+1554378188 source:z:\prog\tp_3\src\vegetable.cpp
+	"Vegetable.h"
+
+1554377586 source:c:\users\alex\desktop\tp 3\main.cpp
+	<iostream>
+	"Carrot.h"
+	"Potatoe.h"
+	"Vegetable.h"
+
