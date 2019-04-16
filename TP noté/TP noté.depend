@@ -1,0 +1,39 @@
+# depslib dependency file v1.0
+1554983578 source:z:\tp noté\tp noté\main.cpp
+	<iostream>
+	"Animal.h"
+	"Lion.h"
+	"Tigre.h"
+	"Vache.h"
+	"Cannard.h"
+
+1554984508 source:z:\tp noté\tp noté\src\animal.cpp
+	"Animal.h"
+
+1554984874 z:\tp noté\tp noté\include\animal.h
+	<iostream>
+
+1554984508 source:z:\tp noté\tp noté\src\cannard.cpp
+	"Cannard.h"
+
+1554984874 z:\tp noté\tp noté\include\cannard.h
+	"Animal.h"
+
+1554984508 source:z:\tp noté\tp noté\src\lion.cpp
+	"Lion.h"
+
+1554984874 z:\tp noté\tp noté\include\lion.h
+	"Animal.h"
+
+1554984508 source:z:\tp noté\tp noté\src\tigre.cpp
+	"Tigre.h"
+
+1554984874 z:\tp noté\tp noté\include\tigre.h
+	"Animal.h"
+
+1554984508 source:z:\tp noté\tp noté\src\vache.cpp
+	"Vache.h"
+
+1554984874 z:\tp noté\tp noté\include\vache.h
+	"Animal.h"
+
